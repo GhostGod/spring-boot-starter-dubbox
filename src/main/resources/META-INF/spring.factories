@@ -1,2 +1,4 @@
 org.springframework.context.ApplicationContextInitializer=\
 com.hiersun.boot.autoconfigure.dubbo.DubboConfigurationApplicationContextInitializer
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.hiersun.boot.autoconfigure.dubbo.DubboAutoConfiguration
