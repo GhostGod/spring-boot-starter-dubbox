@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.4.2.RELEASE</version>
+	</parent>
+	<artifactId>spring-boot-starter-dubbox</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<name>Spring Boot Dubbox Rpc</name>
+	<description>Spring Boot Dubbox(2.8.4) Rpc</description>
+	<url>http://projects.spring.io/spring-boot/</url>
+	<organization>
+		<name>Pivotal Software, Inc.</name>
+		<url>http://www.spring.io</url>
+	</organization>
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<com.alibaba.druid.version>1.0.16</com.alibaba.druid.version>
+		<com.alibaba.dubbo.version>2.8.4</com.alibaba.dubbo.version>
+		<org.apache.zookeeper.version>3.3.6</org.apache.zookeeper.version>
+		<com.github.sgroschupf.version>0.1</com.github.sgroschupf.version>
+		<spring-boot.version>1.4.2.RELEASE</spring-boot.version>
+	</properties>
+	<developers>
+		<developer>
+			<id>liuyang</id>
+			<name>liuyang</name>
+			<email>y_liu@hiersun.com | 745089707@qq.com</email>
+			<url>https://github.com/GhostGod</url>
+			<roles>
+				<role>Senior Java development engineer</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>${com.alibaba.dubbo.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>spring</artifactId>
+					<groupId>org.springframework</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>

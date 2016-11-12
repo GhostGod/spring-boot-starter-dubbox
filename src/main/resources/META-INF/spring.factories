@@ -1,0 +1,2 @@
+org.springframework.context.ApplicationContextInitializer=\
+com.hiersun.xzkp.conf.dubbo.DubboConfigurationApplicationContextInitializer
