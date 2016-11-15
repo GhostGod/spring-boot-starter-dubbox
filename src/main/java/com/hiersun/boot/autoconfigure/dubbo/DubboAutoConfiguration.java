@@ -1,5 +1,7 @@
 package com.hiersun.boot.autoconfigure.dubbo;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -18,21 +20,26 @@ import com.alibaba.dubbo.config.RegistryConfig;
 @EnableConfigurationProperties({ DubboBaseProperties.class })
 public class DubboAutoConfiguration {
 
+	private final static Logger logger = LoggerFactory.getLogger(DubboAutoConfiguration.class);
+
 	@Autowired
 	private DubboBaseProperties properties;
 
 	@Bean
 	public ApplicationConfig application() {
+		logger.debug("{}", properties.getApplication());
 		return properties.getApplication();
 	}
 
 	@Bean
 	public RegistryConfig registry() {
+		logger.debug("{}", properties.getRegistry());
 		return properties.getRegistry();
 	}
 
 	@Bean
 	public ProtocolConfig protocol() {
+		logger.debug("{}", properties.getProtocol());
 		return properties.getProtocol();
 	}
 }

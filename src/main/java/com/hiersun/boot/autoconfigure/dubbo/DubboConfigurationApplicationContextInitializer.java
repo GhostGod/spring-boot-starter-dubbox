@@ -1,5 +1,7 @@
 package com.hiersun.boot.autoconfigure.dubbo;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -14,10 +16,13 @@ import com.alibaba.dubbo.config.spring.AnnotationBean;
  */
 public class DubboConfigurationApplicationContextInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
 
+	private final static Logger logger = LoggerFactory.getLogger(DubboConfigurationApplicationContextInitializer.class);
+
 	@Override
 	public void initialize(ConfigurableApplicationContext applicationContext) {
 		Environment env = applicationContext.getEnvironment();
 		String scan = env.getProperty("spring.dubbo.scan.package");
+		logger.info("spring.dubbo.scan.package={}", scan);
 		if (scan != null) {
 			AnnotationBean scanner = BeanUtils.instantiate(AnnotationBean.class);
 			scanner.setPackage(scan);
