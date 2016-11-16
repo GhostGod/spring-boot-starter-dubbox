@@ -56,5 +56,6 @@ public class DubboAutoConfiguration {
 		}
 		logger.info("{}", properties.getProtocol());
 		return properties.getProtocol();
+
 	}
 }
