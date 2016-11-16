@@ -27,19 +27,19 @@ public class DubboAutoConfiguration {
 
 	@Bean
 	public ApplicationConfig application() {
-		logger.debug("{}", properties.getApplication());
+		logger.info("{}", properties.getApplication());
 		return properties.getApplication();
 	}
 
 	@Bean
 	public RegistryConfig registry() {
-		logger.debug("{}", properties.getRegistry());
+		logger.info("{}", properties.getRegistry());
 		return properties.getRegistry();
 	}
 
 	@Bean
 	public ProtocolConfig protocol() {
-		logger.debug("{}", properties.getProtocol());
+		logger.info("{}", properties.getProtocol());
 		return properties.getProtocol();
 	}
 }
